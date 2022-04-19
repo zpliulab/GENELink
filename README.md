@@ -4,3 +4,6 @@
 ## Dependencies
 
 ## Usage
+
+## License
+GENELink is licensed under the MIT License.
