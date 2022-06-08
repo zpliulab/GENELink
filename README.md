@@ -1,5 +1,5 @@
 
-## Graph attention network for link prediction of gene regulations from single cell RNA-sequecing data
+## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data
 
 ## Dependencies
 - Python == 3.8 
