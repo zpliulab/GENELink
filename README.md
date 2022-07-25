@@ -1,7 +1,9 @@
-
 ## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data
 
+![](https://github.com/zpliulab/GENELink/blob/main/Figure/Framework.jpg)
+
 ## Dependencies
+
 - Python == 3.8 
 - Pytorch == 1.6.0
 - scikit-learn==1.0.2
@@ -12,4 +14,5 @@
 ## Usage
 
 ## License
+
 GENELink is licensed under the MIT License.
