@@ -1,4 +1,4 @@
-## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data$$
+## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data
 
 ![](https://github.com/zpliulab/GENELink/blob/main/Figure/Framework.jpg)
 
