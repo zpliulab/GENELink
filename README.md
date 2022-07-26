@@ -23,7 +23,13 @@
    
    `` python main.py``
    
+   To apply dot product as score metric:
    
+   Type == 'dot', flag== False
+   
+   To apply causal inference:
+   
+   Type == 'MLP', flag==True
    
    
 
