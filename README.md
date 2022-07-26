@@ -1,4 +1,4 @@
-## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data
+## Graph attention network for link prediction of gene regulations from single cell RNA-sequencing data$$
 
 ![](https://github.com/zpliulab/GENELink/blob/main/Figure/Framework.jpg)
 
@@ -12,6 +12,20 @@
 - gseapy==0.10.8
 
 ## Usage
+
+1. __Preparing  for gene expression profiles and  gene-gene adjacent matrix__
+   
+   GENELink integrates gene expression matrix __(N×M)__ with prior gene topology __(N×N)__ to learn low-dimensional vertorized representations with supervision.  
+
+2. **Command to run GENElink**
+   
+   To train an ab initio model, simply uses the script 'main.py'.
+   
+   `` python main.py``
+   
+   
+   
+   
 
 ## License
 
