@@ -43,7 +43,6 @@ Non-Specific
 mHSC-L learning rate = 3e-5
 """
 data_type = 'mESC'
-net_type = 'Specific'
 num = 500
 
 
@@ -62,9 +61,9 @@ def embed2file(tf_embed,tg_embed,gene_file,tf_path,target_path):
 
 
 density = Network_Statistic(data_type,num,net_type)
-exp_file = '.../Demo/'+net_type+' Dataset/'+data_type+'/TFs+'+str(num)+'/BL--ExpressionData.csv'
-tf_file = '.../Demo/'+net_type+' Dataset/'+data_type+'/TFs+'+str(num)+'/TF.csv'
-target_file = '.../Demo/'+net_type+' Dataset/'+data_type+'/TFs+'+str(num)+'/Target.csv'
+exp_file = '.../Demo/'+data_type+'/TFs+'+str(num)+'/BL--ExpressionData.csv'
+tf_file = '.../Demo/'+data_type+'/TFs+'+str(num)+'/TF.csv'
+target_file = '.../Demo/'+data_type+'/TFs+'+str(num)+'/Target.csv'
 
 data_input = pd.read_csv(exp_file,index_col=0)
 loader = load_data(data_input)
@@ -78,15 +77,15 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 data_feature = feature.to(device)
 tf = tf.to(device)
 
-train_file = '.../Demo/Train_validation_test/'+net_type+'/'+data_type+' '+str(num)+'/Train_set.csv'
-test_file = '.../Demo/Train_validation_test/'+net_type+'/'+data_type+' '+str(num)+'/Test_set.csv'
-val_file = '.../Demo/Train_validation_test/'+net_type+'/'+data_type+' '+str(num)+'/Validation_set.csv'
+train_file = '.../Demo/Train_validation_test/'+data_type+' '+str(num)+'/Train_set.csv'
+test_file = '.../Demo/Train_validation_test/'+data_type+' '+str(num)+'/Test_set.csv'
+val_file = '.../Demo/Train_validation_test/'+data_type+' '+str(num)+'/Validation_set.csv'
 
 
-tf_embed_path = r'Result/'+net_type+'/'+data_type+' '+str(num)+'/Channel1.csv'
-target_embed_path = r'Result/'+net_type+'/'+data_type+' '+str(num)+'/Channel2.csv'
-if not os.path.exists('Result/'+net_type+'/'+data_type+' '+str(num)):
-    os.makedirs('Result/'+net_type+'/'+data_type+' '+str(num))
+tf_embed_path = r'Result/'+data_type+' '+str(num)+'/Channel1.csv'
+target_embed_path = r'Result/'+data_type+' '+str(num)+'/Channel2.csv'
+if not os.path.exists('Result/'+data_type+' '+str(num)):
+    os.makedirs('Result/'+data_type+' '+str(num))
 
 train_data = pd.read_csv(train_file, index_col=0).values
 validation_data = pd.read_csv(val_file, index_col=0).values
@@ -127,7 +126,7 @@ validation_data = val_data.to(device)
 optimizer = Adam(model.parameters(), lr=args.lr)
 scheduler = StepLR(optimizer, step_size=1, gamma=0.99)
 
-model_path = 'model/'+net_type+'/'
+model_path = 'model/'
 if not os.path.exists(model_path):
     os.makedirs(model_path)
 
