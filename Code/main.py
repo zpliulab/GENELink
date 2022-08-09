@@ -178,18 +178,6 @@ embed2file(tf_embed,target_embed,target_file,tf_embed_path,target_embed_path)
 
 
 
-# score = model(data_feature, adj, test_data)
-# if args.flag:
-#     score = torch.softmax(score, dim=1)
-# else:
-#     score = torch.sigmoid(score)
-# # score = torch.sigmoid(score)
-#
-#
-# AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
-#
-# print('AUC:{}'.format(AUC),
-#      'AUPRC:{}'.format(AUPR))
 
 
 
