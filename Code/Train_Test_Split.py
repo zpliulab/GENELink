@@ -8,8 +8,10 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--ratio', type=float, default=0.67, help='the ratio of the training set')
-parser.add_argument('--num', type=int, default=500, help='network scale')
-parser.add_argument('--p_val', type=float, default=1.0, help='the position of the TFs with single target')
+parser.add_argument('--num', type=int, default= 500, help='network scale')
+parser.add_argument('--p_val', type=float, default=0.5, help='the position of the target with degree equaling to one')
+parser.add_argument('--data', type=str, default='hESC', help='data type')
+parser.add_argument('--net', type=str, default='Specific', help='network type')
 args = parser.parse_args()
 
 
@@ -292,8 +294,8 @@ def Hard_Negative_Specific_train_test_val(label_file, Gene_file, TF_file, train_
 
 
 if __name__ == '__main__':
-    data_type = 'mHSC-L'
-    net_type = 'Non-Specific'
+    data_type = args.data
+    net_type = args.net
 
     density = Network_Statistic(data_type=data_type, net_scale=args.num, net_type=net_type)
 
